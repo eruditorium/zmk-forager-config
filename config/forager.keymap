@@ -7,6 +7,64 @@
 #define SYM  2
 #define ADJ  3
 
+
+/ {
+    combos {
+        compatible = "zmk,combos";
+
+        COMBO(esc, &kp ESC, 13 16, 75)
+        COMBO(caps, &caps_word, 10 19, 75)
+        COMBO(capslock, &kp CAPSLOCK, 0 9, 75)
+
+        // In the number cluster
+
+        COMBO(singlequote, &kp SINGLE_QUOTE, 6 7, 50)
+        COMBO(doublequote, &kp DOUBLE_QUOTES, 7 8, 50)
+        COMBO(minus, &kp MINUS, 17 18, 50)
+        COMBO(plus, &kp PLUS, 16 17, 50)
+        COMBO(equal, &kp EQUAL, 27 28, 50)
+        COMBO(star, &kp ASTERISK, 26 27, 50)
+        COMBO(underscore, &kp UNDERSCORE, 16 17 18, 50)
+
+        qw-combo {
+            bindings = <&kp ESCAPE>;
+            key-positions = <0 1>;
+        };
+
+        tab {
+            bindings = <&kp TAB>;
+            key-positions = <11 12>;
+        };
+
+        bspc {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <7 8>;
+        };
+
+        del {
+            bindings = <&kp DELETE>;
+            key-positions = <17 18>;
+        };
+
+        lbrace {
+            bindings = <&kp LEFT_BRACE>;
+            key-positions = <3 4>;
+        };
+
+        rbrace {
+            bindings = <&kp RIGHT_BRACE>;
+            key-positions = <5 6>;
+        };
+
+        lbracket {
+            bindings = <&kp LEFT_BRACKET>;
+            key-positions = <13 14>;
+        };
+    };
+};
+
+
+
 / {
     behaviors {
         as: auto_shift {
