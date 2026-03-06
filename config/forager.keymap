@@ -7,7 +7,6 @@
 #define SYM  2
 #define ADJ  3
 
-
 / {
     combos {
         compatible = "zmk,combos";
@@ -19,17 +18,17 @@
 
         tab {
             bindings = <&kp TAB>;
-            key-positions = <11 12>;
+            key-positions = <11 10>;
         };
 
         bspc {
             bindings = <&kp BACKSPACE>;
-            key-positions = <7 8>;
+            key-positions = <8 9>;
         };
 
         del {
             bindings = <&kp DELETE>;
-            key-positions = <17 18>;
+            key-positions = <18 19>;
         };
 
         lbrace {
@@ -46,10 +45,43 @@
             bindings = <&kp LEFT_BRACKET>;
             key-positions = <13 14>;
         };
+
+        rbracket {
+            bindings = <&kp RBKT>;
+            key-positions = <15 16>;
+        };
+
+        lparenthesis {
+            bindings = <&kp LEFT_PARENTHESIS>;
+            key-positions = <23 24>;
+        };
+
+        rparenthesis {
+            bindings = <&kp RIGHT_PARENTHESIS>;
+            key-positions = <25 26>;
+        };
+
+        minus {
+            bindings = <&kp MINUS>;
+            key-positions = <12 13>;
+        };
+
+        doublequote {
+            bindings = <&kp DOUBLE_QUOTES>;
+            key-positions = <22 23>;
+        };
+
+        underscore {
+            bindings = <&kp UNDERSCORE>;
+            key-positions = <16 17>;
+        };
+
+        quote {
+            bindings = <&kp SINGLE_QUOTE>;
+            key-positions = <26 27>;
+        };
     };
 };
-
-
 
 / {
     behaviors {
