@@ -8,8 +8,40 @@
 #define ADJ  3
 
 / {
+    macros {
+        md_codeblock: md_codeblock {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp GRAVE &kp GRAVE &kp GRAVE>;
+        };
+
+        select_word: select_word {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            // Windows/Linux: Ctrl+Left (start of word) -> Ctrl+Shift+Right (select word)
+            bindings = <&kp LC(LEFT) &kp LC(LS(RIGHT))>;
+        };
+
+        select_line: select_line {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            // Windows/Linux: Home (start of line) -> Shift+End (select line)
+            bindings = <&kp HOME &kp LS(END)>;
+        };
+    };
+
     combos {
         compatible = "zmk,combos";
+
+        combo_md_codeblock {
+            timeout-ms = <50>;
+            key-positions = <1 2>; // This maps to the W and F keys
+            bindings = <&md_codeblock>;
+        };
 
         qw-combo {
             bindings = <&kp ESCAPE>;
